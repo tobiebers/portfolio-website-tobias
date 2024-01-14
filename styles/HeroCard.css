@@ -1,0 +1,25 @@
+/* CSS */
+.container-relative {
+  position: relative;
+}
+
+.fade-in-card {
+  position: absolute;
+  top: 20px; /* Passen Sie diese Werte nach Bedarf an */
+  left: 20px;
+
+  animation: fadeIn 3s ease-in-out;
+    width: 100vw;     /* Stellt die Breite auf die volle Bildschirmbreite ein */
+  height: 100vh;    /* Stellt die Höhe ein, falls gewünscht */
+  display: flex;    /* Flexbox-Container */
+  justify-content: center; /* Zentriert den Inhalt horizontal */
+  align-items: center;     /* Zentriert den Inhalt vertikal */
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

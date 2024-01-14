@@ -1,33 +1,20 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const menu = document.querySelector(".nav-list");
-    if (isOpen) {
-      menu.classList.add('active');
-    } else {
-      menu.classList.remove('active');
-    }
-  }, [isOpen]);
-
   return (
-    <div className="navbar success theme-text">
-      <div
-        className={`menu-toggle ${isOpen ? 'open' : ''}`}
-        id="mobile-menu"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
-      <ul className="nav-list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/designSite">Design</a></li>
-
-      </ul>
-    </div>
-  )
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+      <Container>
+        <Navbar.Brand href="#home">Mein Portfolio</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#projekte">Projekte</Nav.Link>
+            <Nav.Link href="#kontakt">Kontakt</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
